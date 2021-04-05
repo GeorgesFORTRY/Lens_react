@@ -1,0 +1,64 @@
+body { 
+    color: gold;
+    background-color: darkred;
+    font-weight: bold;       
+    text-align: center;
+    min-height: 100vh;    
+}
+#gallery{
+    display: flex;
+    flex-flow: row wrap;    
+    justify-content: space-around;
+}
+h1 {
+    font-size: 100px ;
+}
+.public {
+    width: 100%;
+    filter: grayscale(0);
+}
+.player {
+    width: 30vw;
+    height:calc(9 / 16 * 30vw);
+    position: relative;
+    transform: scale(0.90);
+    transition: 0.2s all;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.player:hover {
+    transform: scale(1);
+    box-shadow: 0px 0px 10px 0px rgba(230,250,8,0.7);
+    
+}
+.player>* {
+    transition: 0.3s all;
+}
+.figure {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    filter: grayscale(1);
+}
+.player:hover .figure {
+    left: 20%;
+    filter: grayscale(0);
+}
+.player:hover .public {
+    filter: grayscale(1) blur(2px);
+}
+.player footer {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.player:hover footer{
+    top: 80%;
+}
+.player footer h3 {
+    color: black;
+    font-size: 2em;
+    letter-spacing: 1pt;
+}
